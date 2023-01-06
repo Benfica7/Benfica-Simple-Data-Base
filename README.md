@@ -1,6 +1,23 @@
 # Benfica-Simple-Data-Base
 It is an in-memory database implementation that allows you to read, write and manipulate data in JSON and other formats. Provides several methods for performing common operations on a database.
 
+# Instalation
+
+### `Step 1`
+Download the [latest version](https://github.com/Benfica7/Benfica-Simple-Data-Base/releases/)
+
+### `Step 2`
+In the same folder as the file use:
+
+```python
+pip instal bsdb-1.0.0.tar.gz 
+```
+and it will be ready to use :)
+
+# Documentation
+
+To see the documentation [click here](https://github.com/Benfica7/Benfica-Simple-Data-Base/wiki)
+
 # Why use BSDB?
 
 **here are some advantages and disadvantages of BSDB compared to other databases:**
