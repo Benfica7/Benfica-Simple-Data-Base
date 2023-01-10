@@ -10,7 +10,7 @@ Download the [latest version](https://github.com/Benfica7/Benfica-Simple-Data-Ba
 In the same folder as the file use:
 
 ```python
-pip instal bsdb-1.0.0.tar.gz 
+pip instal bsdb-1.0.0.tar.gz --use-pep517
 ```
 and it will be ready to use :)
 
