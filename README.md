@@ -1,6 +1,19 @@
 # Benfica-Simple-Data-Base
 It is an in-memory database implementation that allows you to read, write and manipulate data in JSON and other formats. Provides several methods for performing common operations on a database.
 
+# Goal
+
+- Stay open source
+- Be simple and intuitive
+- Use as few external resources as possible
+
+# Features
+
+- Supports CSV and JSON
+- Has tools to update, delete and edit databases
+- Supports "medium" amounts of data
+- Can be easily deployed to your project and does not depend on any additional features like a manager
+
 # Instalation
 
 ### `Step 1`
