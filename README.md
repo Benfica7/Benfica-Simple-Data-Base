@@ -1,3 +1,16 @@
+<div align="center">
+
+![](https://img.shields.io/github/downloads/Benfica7/Benfica-Simple-Data-Base/total?color=blue&style=flat-square)
+![](https://img.shields.io/github/contributors/Benfica7/Benfica-Simple-Data-Base?color=blue&style=flat-square)
+![](https://img.shields.io/github/license/Benfica7/Benfica-Simple-Data-Base?color=blue&style=flat-square)
+![](https://img.shields.io/github/v/release/Benfica7/Benfica-Simple-Data-Base?style=flat-square)
+![](https://img.shields.io/github/languages/code-size/Benfica7/Benfica-Simple-Data-Base?style=flat-square)
+![](https://img.shields.io/github/directory-file-count/Benfica7/Benfica-Simple-Data-Base?style=flat-square)
+
+</div>
+
+---
+
 # Benfica-Simple-Data-Base
 It is an in-memory database implementation that allows you to read, write and manipulate data in JSON and other formats. Provides several methods for performing common operations on a database.
 
