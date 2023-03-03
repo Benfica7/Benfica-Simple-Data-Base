@@ -240,17 +240,22 @@ class Database:
         """
         return len(self.database)
 
-    def paginate(self, page_size: int, page_number: int) -> List[Dict]:
+    def paginate(self, page_size: int, page_number: int, sort_field: str = None, reverse_sort: bool = False) -> List[Dict]:
         """
-        Returns a list of items from the database, paginated by the specified page size and page number.
+        Returns a list of items from the database, paginated by the specified page size and page number,
+        sorted by the specified field if sort_field is not None, in descending order if reverse_sort is True.
         """
+        if sort_field is not None:
+            sorted_database = sorted(self.database, key=lambda x: x.get(sort_field), reverse=reverse_sort)
+        else:
+            sorted_database = self.database
         start = (page_number - 1) * page_size
         end = start + page_size
-        return self.database[start:end]
+        return sorted_database[start:end]
 
     # Treatment methods
 
-    def sort_by_size(self, field: str, reverse: bool = False) -> List:
+    def sort_size(self, field: str, reverse: bool = False) -> List:
         """
         Sorts the database by the size of the specified field.
 
@@ -267,7 +272,7 @@ class Database:
         else:
             raise TypeError("The field must be a string, a list, or an integer.")
 
-    def sort_by_multiple_fields(self, fields: List[str], reverse: bool = False) -> List:
+    def sort_many_size_fields(self, fields: List[str], reverse: bool = False) -> List:
         """
         Sorts the database by the specified fields.
 
@@ -351,17 +356,6 @@ class Database:
                     raise ValueError("Invalid transformation function")
                 item[field] = value
 
-    def validate(self, item: dict, constraints: dict) -> bool:
-        """
-        Validates an item by checking that its field values match the specified constraints.
-
-        Returns True if the item is valid, False otherwise.
-        """
-        for field, value in constraints.items():
-            if item.get(field) != value:
-                return False
-        return True
-
     def field_exists(self, field: str) -> bool:
         """
         Returns True if the specified field exists in at least one item in the database, False otherwise.
@@ -411,3 +405,8 @@ class Database:
             self.to_csv(self.file_path)
         else:
             raise ValueError(f"Error: Invalid option {self.file_type}")
+
+if __name__ == '__main__':
+    db = Database('teste.json')
+    page = db.paginate(1, 1, 'corn', True)
+    print(page)
